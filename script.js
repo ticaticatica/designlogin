@@ -37,6 +37,39 @@ window.addEventListener("DOMContentLoaded", () => {
 
     list.appendChild(item);
   });
+
+// 🔥 여기 추가 (맨 아래)
+window.exportHTMLFile = function () {
+  const slides = document.querySelector(".slides").innerHTML;
+
+  const fullHTML = `
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<div class="slides">
+${slides}
+</div>
+
+<script src="./script.js"></script>
+</body>
+</html>
+`;
+
+  const blob = new Blob([fullHTML], { type: "text/html" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "design-log.html";
+  a.click();
+};
+
+
+
+
 }
 
   // =========================
