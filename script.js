@@ -128,9 +128,9 @@ window.addEventListener("DOMContentLoaded", () => {
   // =========================
   // 🔥 텍스트 자동 저장
   // =========================
-  document.addEventListener("input", () => {
-    saveAll();
-  });
+ ["input", "keyup", "blur"].forEach(evt => {
+  document.addEventListener(evt, saveAll);
+});
 
   // 날짜
 document.addEventListener("change", (e) => {
@@ -257,8 +257,17 @@ document.addEventListener("change", (e) => {
   // =========================
   // 🔥 초기 실행
   // =========================
-  loadAll();
   upgradeCells();
+  loadAll();
+
+  // 🔥 여기 추가 (이 위치가 핵심)
+document.querySelectorAll("input[type='date']").forEach(input => {
+  if (input.getAttribute("value")) {
+    input.value = input.getAttribute("value");
+  }
+});
+
+
   initCells();
   buildDots();
   buildDateList(); // 🔥 추가
