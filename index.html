@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+<div class="slides">
+
+  <!-- 1. 커버 -->
+  <section class="slide cover-slide active">
+    <div class="cover-cell" contenteditable="true">
+      Weekly Design Log
+    </div>
+  </section>
+
+  <!-- 2. memo -->
+  <section class="slide">
+    <div class="intro-container">
+      <h2 contenteditable="true">GOAL</h2>
+      <div class="memo-area" contenteditable="true">
+        생각을 밀고 나가는 힘 기르기
+      </div>
+      <div class="freeLayer"></div>
+    </div>
+  </section>
+
+  <!-- 3. 리스트 -->
+  <section class="slide index-slide">
+    <p class="main-title">LIST</p>
+    <div id="dateList"></div>
+    <div class="freeLayer"></div>
+  </section>
+
+  <!-- 4. DAY -->
+  <section class="slide grid-slide">
+
+    <div class="grid-header">
+      <span class="day-label">DAY 1</span>
+      <input type="date" class="date-input">
+    </div>
+
+    <div class="grid">
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+    </div>
+
+    <button class="addSlideBtn"> + 페이지 </button>
+
+    <div class="freeLayer"></div>
+
+  </section>
+
+</div>
+
+<div class="dots"></div>
+<div id="slideIndicator"></div>
+
+<script src="./script.js"></script>
+
+</body>
+</html>
